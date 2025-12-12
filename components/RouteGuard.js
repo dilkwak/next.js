@@ -16,16 +16,18 @@ export default function RouteGuard(props) {
     }
 
     useEffect(() => {
-        updateAtom();
+        async function authCheck() {
+            await updateAtom();
+            
+            const token = getToken();
+            const currentPath = router.pathname;
 
-        const token = getToken();
-        const currentPath = router.pathname;
-
-        if (!PUBLIC_PATHS.includes(currentPath) && !token) {
-            router.push("/login");
+            if (!PUBLIC_PATHS.includes(currentPath) && !token) {
+                router.push("/login");
+            }
         }
-
+        
+        authCheck();
     }, [router.pathname]);
-
     return <>{props.children}</>;
 }
