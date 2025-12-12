@@ -8,7 +8,7 @@
 *
 * Name: Dillon Kwak Student ID: 135389203 Date: ________________
 *
-* Vercel App (Deployed) Link: https://web422-sage.vercel.app/
+* Vercel App (Deployed) Link: https://next-js-422.vercel.app/
 *
 ********************************************************************************/
 
